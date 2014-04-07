@@ -30,12 +30,12 @@
         </c:forEach>
         tabs.showIn('pipeLinesTabsContainer');
         tabs.setActiveCaption('${activePipelineId}');
-        // Example: "Users and Groups -- TeamCity" -> "Users and Groups > Users -- TeamCity"
-       // var tabTitle = '> <c:out value="${extensionTab.tabTitle}"/> -- TeamCity';
+
+        <%-- TODO imlement title
         var tabTitle = '> Other pipline -- TeamCity';
 
         if (document.title.indexOf(tabTitle) == -1) {
             document.title = document.title.replace(/-- TeamCity$/, tabTitle);
-        }
+        } --%>
     })();
 </script>
