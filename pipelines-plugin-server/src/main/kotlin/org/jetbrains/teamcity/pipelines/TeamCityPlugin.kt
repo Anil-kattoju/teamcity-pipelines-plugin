@@ -18,7 +18,23 @@ open class ProjectPipelinesTab(pagePlaces: PagePlaces,
                                descriptor: PluginDescriptor) : ProjectTab("piplines-overview", "Pipelines",
         pagePlaces, projectManager, descriptor.getPluginResourcesPath("pipelines-overview.jsp")) {
 
+    {
+        addCssFile(descriptor.getPluginResourcesPath("css/pipelines-view.css"))
+        addJsFile(descriptor.getPluginResourcesPath("css/pipelines-view.js"))
+    }
+
     override fun fillModel(model: MutableMap<String, Any>, request: HttpServletRequest, project: SProject, user: SUser?) {
-        model["tempKey"] = "Hello World!"
+
+        val pipelines = listOf(
+                PipelineBean("id_1", "Deployment", 1),
+                PipelineBean("id_1", "Old deployment", 45),
+                PipelineBean("id_1", "Release pipeline", 16)
+        )
+
+        model["pipelines"] = pipelines
+        model["activePipelineId"] = pipelines[0].id
     }
 }
+
+
+class PipelineBean(val id: String, val name: String, val count: Int)

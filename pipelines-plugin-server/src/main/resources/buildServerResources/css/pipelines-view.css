@@ -1,0 +1,78 @@
+
+.pipelines-sidebar {
+    vertical-align: top;
+}
+
+.pipelines-sidebar {
+    width: 16%;
+    min-width: 200px;
+    padding: 0 20px 10px 0;
+}
+
+.pipelines-sidebar .category {
+    padding: 0.2em 0 0.2em 20px;
+}
+
+.pipelines-sidebar .category:first-child {
+    padding-top: 0;
+}
+
+.pipelines-sidebar .category .icon {
+    vertical-align: text-bottom;
+}
+
+.pipelines-sidebar .item {
+    max-width: 240px;
+    padding-left: 20px;
+}
+
+.pipelines-sidebar .item.active {
+    background: #E9F3FD;
+    font-weight: bold;
+}
+
+.pipelines-sidebar .item:hover {
+    background: #E9F3FD;
+}
+
+.pipelines-sidebar .item a {
+    display: block;
+    text-decoration: none;
+}
+
+.pipelines-sidebar .item + .category {
+    margin-top: 10px;
+}
+
+.pipelines-sidebar .usefulLinks {
+    max-width: 240px;
+}
+
+
+#pipeLinesTabsContainer .tabs {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+#pipeLinesTabsContainer .tabs li {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: medium none;
+    float: none;
+    margin: 0;
+    padding: 0.2em 0 0.2em 20px;
+}
+#pipeLinesTabsContainer .tabs li p {
+    margin: 0;
+    padding: 0;
+}
+#pipeLinesTabsContainer .tabs li:hover {
+    background: none repeat scroll 0 0 #E9F3FD;
+}
+#pipeLinesTabsContainer .tabs li.selected {
+    background: none repeat scroll 0 0 #E9F3FD;
+    font-weight: bold;
+}
+#pipeLinesTabsContainer .tabs li.selected a, #projectTabsContainer .tabs li.selected .tabCounter {
+    color: #1564C2;
+    position: static;
+}
