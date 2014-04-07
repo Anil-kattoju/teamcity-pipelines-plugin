@@ -1,0 +1,8 @@
+<root>
+    <item name='jetbrains.buildServer.web.openapi.project.ProjectTab void fillModel(java.util.Map&lt;java.lang.String,java.lang.Object&gt;, javax.servlet.http.HttpServletRequest, jetbrains.buildServer.serverSide.SProject, jetbrains.buildServer.users.SUser)'>
+        <annotation name='kotlin.jvm.KotlinSignature'>
+            <val name="value"
+                 val="&quot;fun fillModel(p0: MutableMap&lt;String, Any&gt;, p1: HttpServletRequest, p2: SProject, p3: SUser?): Unit&quot;"/>
+        </annotation>
+    </item>
+</root>
