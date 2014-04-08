@@ -27,8 +27,8 @@ open class ProjectPipelinesTab(pagePlaces: PagePlaces,
 
         val pipelines = listOf(
                 PipelineBean("id_1", "Deployment", 1),
-                PipelineBean("id_1", "Old deployment", 45),
-                PipelineBean("id_1", "Release pipeline", 16)
+                PipelineBean("id_2", "Old deployment", 45),
+                PipelineBean("id_3", "Release pipeline", 16)
         )
 
         model["pipelines"] = pipelines
