@@ -7,6 +7,7 @@ import jetbrains.buildServer.web.openapi.PluginDescriptor
 import javax.servlet.http.HttpServletRequest
 import jetbrains.buildServer.serverSide.SProject
 import jetbrains.buildServer.users.SUser
+import jetbrains.buildServer.controllers.admin.projects.EditProjectTab
 
 /**
  * Created by Nikita.Skvortsov
@@ -38,3 +39,19 @@ open class ProjectPipelinesTab(pagePlaces: PagePlaces,
 
 
 class PipelineBean(val id: String, val name: String, val count: Int)
+
+
+open class ProjectPipelinesAdminTab(pagePlaces: PagePlaces,
+                                    descriptor: PluginDescriptor) : EditProjectTab(pagePlaces, "piplines-admin",
+        descriptor.getPluginResourcesPath("pipelines-admin.jsp"), "Pipelines settings") {
+    {
+        addCssFile(descriptor.getPluginResourcesPath("css/pipelines-view.css"))
+        addJsFile(descriptor.getPluginResourcesPath("css/pipelines-view.js"))
+    }
+
+
+    override fun fillModel(model: MutableMap<String, Any>, request: HttpServletRequest) {
+        super<EditProjectTab>.fillModel(model, request)
+        model[""]
+    }
+}
