@@ -19,19 +19,25 @@
 
 
 <%-- add pipeline dialog--%>
-<bs:modalDialog formId="addPipelineForm" title="Add pipeline" action="/pipelineAdminCtrl"
-                closeCommand="BS.AddPipelineDialog.close();"
-                saveCommand="BS.AddPipelineDialog.save();">
+<bs:modalDialog formId="addPipelineForm" title="Add pipeline" action="/pipelineAdminCtrl.html?newPipeline"
+                closeCommand="BS.AddPipelineDialog.close()"
+                saveCommand="BS.AddPipelineDialog.save()">
     <table>
         <tr>
             <td>
                 Pipeline name:
             </td>
             <td>
-                <forms:textField maxlength="100" className="longField" name="pipelineName"/>
+                <forms:textField maxlength="100" name="newName"/>
                 <span class="error" id="error_pipelineName"></span>
             </td>
         </tr>
     </table>
+    <div class="popupSaveButtonsBlock">
+        <forms:submit label="Add"/>
+        <forms:cancel onclick="BS.AddPipelineDialog.close();" showdiscardchangesmessage="false"/>
+        <%-- <forms:saving id="saveArtifactDependencyProgress"/> --%>
+    </div>
+    <input type="hidden" name="projectExtId" value="${currentProject.externalId}">
 </bs:modalDialog>
 
