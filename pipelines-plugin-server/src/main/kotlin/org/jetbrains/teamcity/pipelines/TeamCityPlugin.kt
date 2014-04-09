@@ -8,6 +8,15 @@ import javax.servlet.http.HttpServletRequest
 import jetbrains.buildServer.serverSide.SProject
 import jetbrains.buildServer.users.SUser
 import jetbrains.buildServer.controllers.admin.projects.EditProjectTab
+import jetbrains.buildServer.serverSide.SBuildServer
+import jetbrains.buildServer.web.openapi.WebControllerManager
+import javax.servlet.http.HttpServletResponse
+import org.springframework.web.servlet.ModelAndView
+import jetbrains.buildServer.controllers.BaseFormXmlController
+import org.jdom.Element
+import jetbrains.buildServer.controllers.FormUtil
+import jetbrains.buildServer.web.openapi.ControllerAction
+import java.util.ArrayList
 
 /**
  * Created by Nikita.Skvortsov
@@ -20,38 +29,23 @@ open class ProjectPipelinesTab(pagePlaces: PagePlaces,
         pagePlaces, projectManager, descriptor.getPluginResourcesPath("pipelines-overview.jsp")) {
 
     {
-        addCssFile(descriptor.getPluginResourcesPath("css/pipelines-view.css"))
-        addJsFile(descriptor.getPluginResourcesPath("css/pipelines-view.js"))
+        addCssFile(descriptor.getPluginResourcesPath("css/pipelines.css"))
+        addJsFile(descriptor.getPluginResourcesPath("js/pipelines-view.js"))
     }
 
     override fun fillModel(model: MutableMap<String, Any>, request: HttpServletRequest, project: SProject, user: SUser?) {
-
         val pipelines = listOf(
                 PipelineBean("id_1", "Deployment", 1),
                 PipelineBean("id_2", "Old deployment", 45),
                 PipelineBean("id_3", "Release pipeline", 16)
         )
-
         model["pipelines"] = pipelines
         model["activePipelineId"] = pipelines[0].id
     }
 }
 
 
-class PipelineBean(val id: String, val name: String, val count: Int)
 
 
-open class ProjectPipelinesAdminTab(pagePlaces: PagePlaces,
-                                    descriptor: PluginDescriptor) : EditProjectTab(pagePlaces, "piplines-admin",
-        descriptor.getPluginResourcesPath("pipelines-admin.jsp"), "Pipelines settings") {
-    {
-        addCssFile(descriptor.getPluginResourcesPath("css/pipelines-view.css"))
-        addJsFile(descriptor.getPluginResourcesPath("css/pipelines-view.js"))
-    }
 
 
-    override fun fillModel(model: MutableMap<String, Any>, request: HttpServletRequest) {
-        super<EditProjectTab>.fillModel(model, request)
-        model[""]
-    }
-}
